@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+
+<head>
+    <title>MMU Bulletin</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.96.1/css/materialize.min.css" media="screen,projection" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+
+<body>
+    <div class="navbar-fixed">
+        <nav>
+            <div class="nav-wrapper">
+                <a href="#" class="brand-logo">MMU Bulletin</a>
+                <ul id="nav-mobile" class="right hide-on-med-and-down">
+                    <li><a href="sass.html">CamSYS</a></li>
+                    <li><a href="components.html">MMLS</a></li>
+                    <li><a onclick="hue()">limhenry.me</a></li>
+                </ul>
+            </div>
+        </nav>
+    </div>
+
+    <ul class="collapsible" data-collapsible="accordion" id="links">
+
+    </ul>
+
+
+    <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.96.1/js/materialize.min.js"></script>
+</body>
+<script>
+    var i = 0;
+    var getJSON = function(url) {
+        return new Promise(function(resolve, reject) {
+            var xhr = new XMLHttpRequest();
+            xhr.open('get', url, true);
+            xhr.responseType = 'json';
+            xhr.onload = function() {
+                var status = xhr.status;
+                if (status == 200) {
+                    resolve(xhr.response);
+                } else {
+                    reject(status);
+                }
+            };
+            xhr.send();
+        });
+    };
+
+    getJSON('//mmu-api.co/bulletin_api').then(function(data) {
+
+            while (i < data.length) {
+                var div = document.createElement("div");
+                var div2 = document.createElement("div");
+                var li = document.createElement("li");
+                var p = document.createElement("p");
+                li.setAttribute("id", i);
+                var title = document.createTextNode(data[i].title.toUpperCase());
+
+                if (data[i].contents.length > 5) {
+                    var contents = document.createTextNode(data[i].contents);
+                } else {
+                    var contents = document.createTextNode("Move along, nothing to see here");
+                }
+
+                div.appendChild(title);
+                div2.appendChild(p);
+                p.appendChild(contents);
+
+                div.setAttribute("class", "collapsible-header");
+                div2.setAttribute("class", "collapsible-body");
+                document.getElementById("links").appendChild(li);
+                document.getElementById(i).appendChild(div);
+                document.getElementById(i).appendChild(div2);
+                console.log("done")
+                i++;
+            }
+            run();
+        }
+
+    );
+
+    function run() {
+        Materialize.toast('WARNING: This is an experimental build.', 5000); // 
+        $('.collapsible').collapsible({
+            accordion: false // A setting that changes the collapsible behavior to expandable instead of the default accordion style
+        });
+
+        console.log("hhaha")
+    }
+</script>
+
+</html>
