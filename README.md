@@ -2,4 +2,5 @@
 MMU Bulletin Board with Material Design
 
 Credit:
-API created by Hii.
+- Hii for API
+- materializecss.com for CSS
