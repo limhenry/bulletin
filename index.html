@@ -72,11 +72,8 @@
 
     <script type="text/javascript" src="jquery-2.1.1.min.js"></script>
     <script src="js/materialize.min.js"></script>
-</body>
-<script>
 
 
-</script>
 <script>
     var i = 0;
     var getJSON = function(url) {
@@ -136,15 +133,7 @@
         $('.collapsible').collapsible({
             accordion: false // A setting that changes the collapsible behavior to expandable instead of the default accordion style
         });
-            console.log("cacheBustedUrl");
-var cacheBustedUrl = 'index.html';
-document.onload = cacheBustedUrl;
 
-  if ('serviceWorker' in navigator) {
-    navigator.serviceWorker.register('service-worker.js', {scope: './'});
-
-  }
-        console.log("hhaha")
     }
 
 
@@ -177,5 +166,6 @@ $(function(){
     });
 });
 </script>
-
+<script src='js/app.js'></script>
+</body>
 </html>
