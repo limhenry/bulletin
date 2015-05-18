@@ -1,0 +1,69 @@
+  body {
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+    background-color: #ECEFF1;
+  }
+
+  main {
+    flex: 1 0 auto;
+  }
+.collapsible-header{
+	height:auto;
+	font-size:1.15em;
+	padding: 1rem 1.4rem;
+	line-height: 2rem;
+	font-weight: 400;
+}
+
+.collapsible{
+	  margin: 3rem 20% 3rem 20%;
+}
+
+.collapsible-body{
+	background-color: #FAFAFA;
+	color: #212121;
+}
+
+nav{
+	background-color: #2196F3;
+}
+nav .brand-logo{
+	padding-left: 20px;
+	font-size: 1.8em;
+}
+
+.toast{
+	font-size: 1em;
+}
+
+#nav-banner{
+	height: 25%;
+	background: url(/img/navbar-banner.jpg); 
+	color: white;
+	position: relative;
+	min-height: 150px;
+}
+
+#nav-banner p{
+  position: absolute;
+  bottom: -20px;
+  left: 28px;
+  font-size: 1.5em;
+}
+
+nav .button-collapse i {
+  font-size: 2.3rem;
+  padding: 15px;
+}
+
+footer.page-footer{
+	background-color: #64B5F6;
+}
+@media only screen and (max-width: 992px){
+nav .brand-logo {
+	font-size: 1.5em;}
+.collapsible{
+	  margin: 0;
+}
+}
