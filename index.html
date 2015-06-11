@@ -109,6 +109,7 @@
                     p.appendChild(contents);
 
                     div.setAttribute("class", "collapsible-header");
+                    div.setAttribute("id", data[i].posted_ID);
                     div2.setAttribute("class", "collapsible-body");
                     document.getElementById("links").appendChild(li);
                     document.getElementById(i).appendChild(div);
@@ -118,7 +119,9 @@
                     console.log("done")
                     i++;
                 }
+                hash();
                 run();
+                
             }
 
         );
@@ -129,10 +132,22 @@
                 accordion: false // A setting that changes the collapsible behavior to expandable instead of the default accordion style
             });
 
+
         }
     </script>
     <script>
         $(".button-collapse").sideNav();
+    </script>
+    <script>
+    function hash(){
+        hash = location.hash;
+        hash = hash.replace("#", "");
+        console.log(hash);
+        apple=document.getElementById(hash);
+        apple.setAttribute("class", "collapsible-header active");
+        apple.scrollIntoView({block: "start", behavior: "smooth"});
+        
+    }
     </script>
 </body>
 
