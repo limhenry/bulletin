@@ -116,7 +116,7 @@
                     document.getElementById(i).appendChild(div2);
                     p = document.getElementById(i).children[1].children[0]
                     p.innerHTML = p.innerHTML.replace(/\n\n/g, "<br>")
-                    console.log("done")
+                    /**console.log("done")**/
                     i++;
                 }
                 hash();
@@ -141,11 +141,15 @@
     <script>
     function hash(){
         hash = location.hash;
-        hash = hash.replace("#", "");
-        console.log(hash);
-        apple=document.getElementById(hash);
-        apple.setAttribute("class", "collapsible-header active");
-        apple.scrollIntoView({block: "start", behavior: "smooth"});
+        try{
+            hash = hash.replace("#", "");
+            apple=document.getElementById(hash);
+            apple.setAttribute("class", "collapsible-header active");
+            apple.scrollIntoView({block: "start", behavior: "smooth"});
+        }
+        catch(e){
+            /**console.log("why u jiang bad de")**/
+        }
         
     }
     </script>
