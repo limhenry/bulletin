@@ -15,7 +15,13 @@
 	line-height: 2rem;
 	font-weight: 400;
 }
-
+.collapsible-header i{
+	float: right;
+	margin-right: 0rem;
+	line-height: 2rem;
+	font-size: 1.5rem;
+	color: #0D47A1;
+}
 .collapsible{
 	  margin: 3rem 20% 3rem 20%;
 }
