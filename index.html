@@ -101,20 +101,28 @@
                     var div2 = document.createElement("div");
                     var li = document.createElement("li");
                     var p = document.createElement("p");
+                    var p2 = document.createElement("p");
                     li.setAttribute("id", i);
                     var title = document.createTextNode(data[i].title.toUpperCase() + " - " + data[i].posted_date);
 
                     if (data[i].content.length > 0) {
                         var contents = document.createTextNode(data[i].content);
+                        div2.appendChild(p);
                         var s = data[i].images;
-                        s = s.replace("bulletinfile", "https://online.mmu.edu.my/bulletinfile")
+                        s = s.replace("bulletinfile", "https://online.mmu.edu.my/bulletinfile");
                         p.innerHTML = s;
+                        if (data[i].attachment !== ""){
+                            var s2 = "Attachment: <br>" + data[i].attachment + "<br>";
+                            p2.innerHTML = s2;
+                            div2.appendChild(p2);}
+                        else{
+                            console.log("empty")
+                        }
                     } else {
                         var contents = document.createTextNode("Move along, nothing to see here");
                     }
 
-                    div.appendChild(title);
-                    div2.appendChild(p);
+                    div.appendChild(title); 
                     p.appendChild(contents);
 
                     div.setAttribute("class", "collapsible-header");
