@@ -1,8 +1,4 @@
 CACHE MANIFEST
-NETWORK:
-*
-CACHE:
-
 index.html
 css/materialize.min.css
 https://mmu-api.appspot.com/response
