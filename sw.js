@@ -29,10 +29,10 @@
       caches.open(cacheNameStatic)
         .then(function (cache) {
           return cache.addAll([
-            '/hello.html',
-            '/app.js',
-            '/js/materialize.min.js',
-            '/css/materialize.min.css',
+            'beta.html',
+            'app.js',
+            'js/materialize.min.js',
+            'css/materialize.min.css',
             'css/style.css',
             'https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js'
           ]);
