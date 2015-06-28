@@ -138,7 +138,7 @@
 
         getJSON('//mmu-api.appspot.com/response').then(function(data) {
 
-                while (i < data.length) {
+                while (i < Object.keys(data).length) {
                     var div = document.createElement("div");
                     var div2 = document.createElement("div");
                     var li = document.createElement("li");
