@@ -29,11 +29,11 @@ self.addEventListener('notificationclick', function(event) {
     .then(function(clientList) {  
       for (var i = 0; i < clientList.length; i++) {  
         var client = clientList[i];  
-        if (client.url == '/bulletinbeta/' && 'focus' in client)  
+        if (client.url == '/bulletin/' && 'focus' in client)  
           return client.focus();  
       }  
       if (clients.openWindow) {
-        return clients.openWindow('/bulletinbeta');  
+        return clients.openWindow('/bulletin/');  
       }
     })
   );
