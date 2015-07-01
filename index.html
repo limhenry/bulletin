@@ -1,93 +1,145 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <title>MMU Bulletin</title>
-    <link rel="stylesheet" href="css/materialize.min.css" media="screen,projection" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
-    <link rel="stylesheet" href="css/style.css" />
-    <link rel="manifest" href="manifest.json">
-    <link rel="shortcut icon" type="image/png" href="favicon.ico"/>
-    <link rel="icon" sizes="192x192" href="launcher-icon-4x.png">
-    <meta property="og:image" content="https://limhenry.me/bulletin/launcher-icon-4x.png" />
-    <meta property="og:title" content="MMU Bulletin" />
-    <meta property="og:description" content="MMU Bulletin Board with Material Design. Created, Developed and Designed by Henry Lim." />
-
-
+    <link href="css/materialize.min.css" media="screen,projection" rel="stylesheet">
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport">
+    <link href="css/style.css" rel="stylesheet">
+    <link href="manifest.json" rel="manifest">
+    <link href="favicon.ico" rel="shortcut icon" type="image/png">
+    <link href="launcher-icon-4x.png" rel="icon" sizes="192x192">
+    <meta content="https://limhenry.me/bulletin/launcher-icon-4x.png">
+    <meta content="MMU Bulletin">
+    <meta content="MMU Bulletin Board with Material Design. Created, Developed and Designed by Henry Lim.">
+    <script async="" src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 </head>
 
 <body>
     <div class="navbar-fixed">
+
+
+        <div id='dropdown1' class='dropdown-content' style="width:300px; height:240px">
+            <div style="float: left;height: 64px;margin: 12px; margin-bottom:0px">
+                <img class="avatar" id="avatar2" src="/bulletinbeta/img/avatar.jpg" style="width: 52px; height: 52px; border-radius: 50%;"></div>
+            <div style="margin-left:75px;margin-top:16px;position: absolute;">
+                <li id="username2"><b>Username</b></li>
+                <li style="font-size: 0.8rem;" id="email2">email@email.com</li>
+            </div>
+            <li class="divider"></li>
+            <li><a href="setting.html">Setting</a></li>
+            <li><a onClick="unregister()" id="signout2">Logout</a></li>
+        </div>
+
         <nav>
+
             <a href="#" class="brand-logo">MMU Bulletin</a>
             <ul class="right hide-on-med-and-down">
+                <li><a href="https://facebook.com/mmubulletin">Facebook</a></li>
                 <li><a href="https://cms.mmu.edu.my/psp/csprd/?cmd=login&languageCd=ENG&">CamSys</a></li>
                 <li><a href="//mmls.mmu.edu.my">MMLS</a></li>
-                <li><a id="reload">limhenry.me</a></li>
+                <li><a href="/">limhenry.me</a></li>
+                <li><a class='dropdown-button' href='#' data-activates='dropdown1' data-constrainwidth='false' data-beloworigin="true" style="height:64px; margin-right: 6px"><i class="mdi-navigation-more-vert" style="font-size:1.5rem"></i></a></li>
             </ul>
             <ul id="slide-out" class="side-nav">
                 <div id="nav-banner">
-                    <p>MMU Bulletin</p>
+                    <img class="avatar" id="avatar" src="/bulletinbeta/img/avatar.jpg">
+                    <p class="username" id="username">MMU Bulletin</p>
+                    <p class="email" id="email"></p>
                 </div>
+                <li><a href="https://facebook.com/mmubulletin">Facebook</a></li>
                 <li><a href="https://cms.mmu.edu.my/psp/csprd/?cmd=login&languageCd=ENG&">CamSys</a></li>
                 <li><a href="//mmls.mmu.edu.my">MMLS</a></li>
-                <li><a id="reload">limhenry.me</a></li>
+                <li><a href="/">limhenry.me</a></li>
+                <li class="divider"></li>
+                <li><a href="setting.html">Setting</a></li>
+                <li><a onClick="unregister()" id="signout" style="display:none; ">Sign Out</a></li>
             </ul>
             <a href="#" data-activates="slide-out" class="button-collapse"><i class="mdi-navigation-menu"></i></a>
         </nav>
     </div>
 
-<div class="row" id="preloader" style="margin-top:50px; margin-bottom:50px">
- <div class="preloader-wrapper small active center-align">
-      <div class="spinner-layer spinner-blue">
-        <div class="circle-clipper left">
-          <div class="circle"></div>
-        </div><div class="gap-patch">
-          <div class="circle"></div>
-        </div><div class="circle-clipper right">
-          <div class="circle"></div>
-        </div>
-      </div>
+    <div class="row" id="preloader" style="margin-top:50px; margin-bottom:50px">
+        <div class="preloader-wrapper small active center-align">
+            <div class="spinner-layer spinner-blue">
+                <div class="circle-clipper left">
+                    <div class="circle"></div>
+                </div>
+                <div class="gap-patch">
+                    <div class="circle"></div>
+                </div>
+                <div class="circle-clipper right">
+                    <div class="circle"></div>
+                </div>
+            </div>
 
-      <div class="spinner-layer spinner-red">
-        <div class="circle-clipper left">
-          <div class="circle"></div>
-        </div><div class="gap-patch">
-          <div class="circle"></div>
-        </div><div class="circle-clipper right">
-          <div class="circle"></div>
-        </div>
-      </div>
+            <div class="spinner-layer spinner-red">
+                <div class="circle-clipper left">
+                    <div class="circle"></div>
+                </div>
+                <div class="gap-patch">
+                    <div class="circle"></div>
+                </div>
+                <div class="circle-clipper right">
+                    <div class="circle"></div>
+                </div>
+            </div>
 
-      <div class="spinner-layer spinner-yellow">
-        <div class="circle-clipper left">
-          <div class="circle"></div>
-        </div><div class="gap-patch">
-          <div class="circle"></div>
-        </div><div class="circle-clipper right">
-          <div class="circle"></div>
-        </div>
-      </div>
+            <div class="spinner-layer spinner-yellow">
+                <div class="circle-clipper left">
+                    <div class="circle"></div>
+                </div>
+                <div class="gap-patch">
+                    <div class="circle"></div>
+                </div>
+                <div class="circle-clipper right">
+                    <div class="circle"></div>
+                </div>
+            </div>
 
-      <div class="spinner-layer spinner-green">
-        <div class="circle-clipper left">
-          <div class="circle"></div>
-        </div><div class="gap-patch">
-          <div class="circle"></div>
-        </div><div class="circle-clipper right">
-          <div class="circle"></div>
+            <div class="spinner-layer spinner-green">
+                <div class="circle-clipper left">
+                    <div class="circle"></div>
+                </div>
+                <div class="gap-patch">
+                    <div class="circle"></div>
+                </div>
+                <div class="circle-clipper right">
+                    <div class="circle"></div>
+                </div>
+            </div>
         </div>
-      </div>
     </div>
-</div>
-        
     <ul class="collapsible" data-collapsible="accordion" id="links">
-        <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-        <!-- Responsive -->
-        <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-3866326270033666" data-ad-slot="2594658120" data-ad-format="auto"></ins>
+        <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-3866326270033666" data-ad-slot="2594658120" data-ad-format="auto">
+        </ins>
         <script>
             (adsbygoogle = window.adsbygoogle || []).push({});
         </script>
+
     </ul>
+
+    <div id="modal1" class="modal modal-fixed-footer">
+        <div class="modal-content">
+            <h4>Setting</h4>
+            <button class="js-push-button" disabled>
+                Enable Notification
+            </button>
+            <code class="curl-code-example js-curl-command" style="display:none"></code>
+            <div class="switch">
+                <label>
+                    Off
+                    <input type="checkbox" checked>
+                    <span class="lever"></span> On
+                </label>
+                <input class="push-noti" id="push-noti" type="checkbox">
+                <p id="tips"></p>
+            </div>
+        </div>
+        <div class="modal-footer">
+            <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat ">Close</a>
+        </div>
+    </div>
 
     <footer class="page-footer">
         <div class="container">
@@ -114,84 +166,101 @@
             </div>
         </div>
     </footer>
-
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
     <script src="js/materialize.min.js"></script>
     <script>
-        var i = 0;
-        var getJSON = function(url) {
-            return new Promise(function(resolve, reject) {
-                var xhr = new XMLHttpRequest();
-                xhr.open('get', url, true);
-                xhr.responseType = 'json';
-                xhr.onload = function() {
-                    var status = xhr.status;
-                    if (status == 200) {
-                        resolve(xhr.response);
-                    } else {
-                        reject(status);
-                    }
-                };
-                xhr.send();
-            });
-        };
+function getprofile(){
+  $(function(){ 
+   $.ajax({
+      type: "GET",
+      url: '//mmu-api.appspot.com/profile',
+      dataType: "jsonp",
+      success: function(data) {
+            profile = data;
+            var email = profile.email;
+            var username = email.substring(0,10);
+            console.log(email);
+            avatar = document.getElementById("avatar");
+            avatar.setAttribute("style", "display: inline");
+            document.getElementById("username").innerHTML = username;
+            document.getElementById("username2").innerHTML = username;
+            document.getElementById("email").innerHTML = email;
+            document.getElementById("email2").innerHTML = email;
+            signout = document.getElementById("signout");
+            signout2 = document.getElementById("signout2");
+            signout.setAttribute("style", "display: block");
+            signout2.setAttribute("style", "display: block");
+            welcomemessage = "Welcome back, " + username;
+            Materialize.toast(welcomemessage, 5000); //
+        },  
+       error: function(err) {
+          console.log(err);
+      }      
+   });
+});
+}
 
-        getJSON('//mmu-api.appspot.com/response').then(function(data) {
+    </script>
 
-                while (i < Object.keys(data).length) {
-                    var div = document.createElement("div");
-                    var div2 = document.createElement("div");
-                    var li = document.createElement("li");
-                    var p = document.createElement("p");
-                    var p2 = document.createElement("p");
-                    var icon = document.createElement("i");
-                    icon.setAttribute("class", "mdi-editor-attach-file tooltipped");
-                    icon.setAttribute("data-position", "left");
-                    icon.setAttribute("data-delay", "50");
-                    icon.setAttribute("data-tooltip", "Attachment available");
-                    li.setAttribute("id", i);
-                    var title = document.createTextNode(data[i].title.toUpperCase() + " - " + data[i].posted_date);
+    <script>
+        function parsejson() {
+            var i = 0
+            while (i < Object.keys(datas).length) {
+                var div = document.createElement("div");
+                var div2 = document.createElement("div");
+                var li = document.createElement("li");
+                var p = document.createElement("p");
+                var p2 = document.createElement("p");
+                var icon = document.createElement("i");
+                icon.setAttribute("class", "mdi-editor-attach-file tooltipped");
+                icon.setAttribute("data-position", "left");
+                icon.setAttribute("data-delay", "50");
+                icon.setAttribute("data-tooltip", "Attachment available");
+                li.setAttribute("id", i);
+                var title = document.createTextNode(datas[i].title.toUpperCase() + " - " + datas[i].posted_date);
 
-                    if (data[i].content.length > 0) {
-                        var contents = document.createTextNode(data[i].content);
-                        div2.appendChild(p);
-                        var s = data[i].images;
-                        s = s.replace("bulletinfile", "https://online.mmu.edu.my/bulletinfile");
-                        p.innerHTML = s;
-                        if (data[i].attachment !== "") {
-                            var s2 = "Attachment: <br>" + data[i].attachment + "<br>";
-                            p2.innerHTML = s2;
-                            div2.appendChild(p2);
-                            div.appendChild(icon);
-                        }
-                    } else {
-                        var contents = document.createTextNode("Move along, nothing to see here");
-                    }
 
-                    div.appendChild(title);
-                    p.appendChild(contents);
-
-                    div.setAttribute("class", "collapsible-header");
-                    div.setAttribute("id", data[i].posted_ID);
-                    div2.setAttribute("class", "collapsible-body");
-                    document.getElementById("links").appendChild(li);
-                    document.getElementById(i).appendChild(div);
-                    document.getElementById(i).appendChild(div2);
-                    p = document.getElementById(i).children[1].children[0]
-                    p.innerHTML = p.innerHTML.replace(/\n\n/g, "<br>")
-                        /**console.log("done")**/
-                    i++;
+                var contents = document.createTextNode(datas[i].content);
+                div2.appendChild(p);
+                var s = datas[i].images;
+                s = s.replace("bulletinfile", "https://online.mmu.edu.my/bulletinfile");
+                p.innerHTML = s;
+                if (datas[i].attachment !== "") {
+                    var s2 = "Attachment: <br>" + datas[i].attachment + "<br>";
+                    p2.innerHTML = s2;
+                    div2.appendChild(p2);
+                    div.appendChild(icon);
                 }
-                hash();
-                document.getElementById('preloader').style.display = 'none';
-                run();
 
+
+                div.appendChild(title);
+                p.appendChild(contents);
+
+                div.setAttribute("class", "collapsible-header");
+                div.setAttribute("id", datas[i].posted_ID);
+                div2.setAttribute("class", "collapsible-body");
+                document.getElementById("links").appendChild(li);
+                document.getElementById(i).appendChild(div);
+                document.getElementById(i).appendChild(div2);
+                p = document.getElementById(i).children[1].children[0]
+                p.innerHTML = p.innerHTML.replace(/\n\n/g, "<br>")
+                    /**console.log("done")**/
+                i++;
             }
+            hash();
+            document.getElementById('preloader').style.display = 'none';
+            var completed = true;
+            console.log(completed);
+            run();
 
-        );
+
+        }
 
         function run() {
-            $('.tooltipped').tooltip({delay: 50});
+            $('.tooltipped').tooltip({
+                delay: 50
+            });
+
             function GetCookie(name) {
                 var arg = name + "=";
                 var alen = arg.length;
@@ -214,11 +283,10 @@
                 Materialize.toast('By browsing our site you agree to our use of cookies.', 10000); //
                 expire = new Date(expire.getTime() + 7776000000);
                 document.cookie = "COOKIE1=here; expires=" + expire;
+            } else {
+                
             }
-            else{
-                Materialize.toast('Yeah! Welcome back :)', 5000); //
-            }
-             
+
             $('.collapsible').collapsible({
                 accordion: false // A setting that changes the collapsible behavior to expandable instead of the default accordion style
             });
@@ -226,6 +294,12 @@
 
         }
         $(".button-collapse").sideNav();
+        $('.modal-trigger').leanModal();
+
+        function redirecttologin() {
+            document.getElementById('preloader').style.display = 'none';
+        }
+
         function hash() {
             hash = location.hash;
             try {
@@ -256,6 +330,7 @@
         ga('create', 'UA-57741199-1', 'auto');
         ga('send', 'pageview');
     </script>
+    <script src="main.js"></script>
 </body>
 
 </html>

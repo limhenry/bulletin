@@ -15,6 +15,7 @@
 	line-height: 2rem;
 	font-weight: 400;
 }
+
 .collapsible-header i{
 	float: right;
 	margin-right: 0rem;
@@ -26,6 +27,27 @@
 	  margin: 3rem 20% 3rem 20%;
 }
 
+button {
+  -webkit-border-radius: 7;
+  -moz-border-radius: 7;
+  border-radius: 7px;
+  font-family: Arial;
+  color: #ffffff;
+  font-size: 14px;
+  background: #3498db;
+  padding: 10px 20px 10px 20px;
+  text-decoration: none;
+  border: none;
+}
+
+button:hover {
+  background: #3cb0fd;
+  text-decoration: none;
+}
+button:disabled{
+	background: red;
+  text-decoration: none;
+}
 .collapsible-body{
 	background-color: #FAFAFA;
 	color: #212121;
@@ -45,19 +67,51 @@ nav .brand-logo{
 
 #nav-banner{
 	height: 25%;
-	background: url(/bulletin/img/navbar-banner.jpg); 
+	background: url(/bulletinbeta/img/navbar-banner.jpg); 
 	color: white;
 	position: relative;
 	min-height: 150px;
 }
 
-#nav-banner p{
+#nav-banner .avatar{
+  border-radius: 50%;
+  width: 42px;
+  bottom: 60px;
   position: absolute;
-  bottom: -20px;
-  left: 28px;
+  left: 12px;
+  display: none;
+}
+
+#nav-banner .username{
+  position: absolute;
+  bottom: -12px;
+  left: 12px;
   font-size: 1.5em;
 }
 
+#nav-banner .email{
+  position: absolute;
+  bottom: -24px;
+  left: 12px;
+  font-size: 0.8em;
+}
+
+#signout:hover{
+  cursor: pointer;
+}
+
+#signout2:hover{
+  cursor: pointer;
+}
+
+#username2{
+font-size: 1.2rem;
+}
+
+#email2, #username2:hover{
+  cursor: auto;
+  background-color: white;
+}
 nav .button-collapse i {
   font-size: 2.3rem;
   padding: 15px;
@@ -72,4 +126,14 @@ nav .brand-logo {
 .collapsible{
 	  margin: 0;
 }
+.modal {
+  width: 100%;
+}
+  .toast{
+    margin-top: 0;
+    word-break: break-all;
+    height: auto;
+      line-height: 24px;
+  padding: 12px 24px;
+  }
 }
