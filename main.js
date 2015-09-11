@@ -6,6 +6,7 @@ $(function(){
       url: '//mmu-api.appspot.com/secure',
       jsonpCallback: "bulletin",
       dataType: "jsonp",
+      jsonpCallback: "bulletin",
       cache: true,
       success: function(data) {
           datas = data;
