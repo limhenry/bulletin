@@ -4,6 +4,7 @@ $(function(){
    $.ajax({
       type: "GET",
       url: '//mmu-api.appspot.com/secure',
+      jsonpCallback: "bulletin",
       dataType: "jsonp",
       cache: true,
       success: function(data) {
@@ -13,7 +14,8 @@ $(function(){
           parsejson();
           },  
       error: function(err) {
-          window.location.replace("//mmu-api.appspot.com/login");
+          window.location.replace("login.html");
+          // window.location.replace("//mmu-api.appspot.com/login");
       }   
    });
 });
